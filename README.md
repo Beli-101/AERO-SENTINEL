@@ -180,7 +180,7 @@ P = D * V
 
 snaga = drag * brzina
 
-P = 85W
+P = 83.35W
 
 To znaci da nam treba snaga od 85W da bi maintainali flight 60km/h
 
@@ -192,10 +192,98 @@ Wing loading odnosno omjer mase aviona na wing area:
 
 W/S = 29.43N / 0.272m² = 108.3 N/m²
 
-Mozemo izracunati i bateriju koja nam je potrebna:
+Sada krecemo na racunanje thrusta potrebnog za odredenu vertikalnu brzinu(climb rate) i ostale stvari kao baterija, komponenta, propeler
 
-tflight(hours) = energy(Wh) / Power(W)
+Prvo idemo na racunanje thrusta potrebnog da bi se avion dizao 5m/s vertikalno dok se krecemo brzinom od 60km/h(16.67m/s)
 
-tflight je vrijeme leta u satima, energija je energija baterije potrebna, power je snaga motora
+T = D + (W/V) * Vz
 
-E = 255Wh
+Gdje je:
+
+T - thrust(ukupan)
+
+D - Drag
+
+W - Weight
+
+V - velocity
+
+Vz - vertical velocity
+
+Kada uvrstimo brojeve to je:
+
+T = 5.1N + (29.43N/16.67m/s) * 5m/s
+
+T = 13.925N
+
+Odnosno na konfiguraciji sa dva motora:
+
+T = 13.925/2 ≈ 6.96N
+
+Sada trazimo motor, a ovo su requirementi za njega:
+
+Mora handleat 6.96N thrusta po motoru
+
+Mora biti kompatibilan sa 4S LiPo baterijom(14.8V)
+
+Mora biti efikasan da drzi let 3 sata
+
+Izabrao sam motor: FW‑B3536
+
+Slaze se sa requirementima, ima masu 105.8g i u puno konfiguracija moze je dovoljan za nase potrebe struje i proizvodi dovoljno thrusta
+
+Sada trazimo kombinaciju takvog motora i propelera:
+
+cilj je dobiti balans izmedu thrusta(za dizanje i ubrzanje) i efikasnosti(za cruise)
+
+Na stranici motora imaju podaci o tocno onome sto trebamo odnosno postoji tablica sa razlicitim setupovima motora i propelera i svi ostali parametri koji ce nam trebat(snaga, thrust itd.)
+
+Nakon provjere tablice izabrali smo APC 10x5 propeler sa 1000KV(koliko rpma ima po voltu) motorom
+
+Sad mozemo estimirati okretaje po minuti odnosno RPM:
+
+RPM = KV * Vbaterije
+
+RPM = 1000 * 14.8
+
+RPM ≈ 14800
+
+Sada racunamo brzinu propelera dok se vrti
+
+V = RPM * r * 2π / 60
+V = 196.8m/s
+
+Sto je ova brzina veca to je veci thrust i brzina nebi trebala biti brza od brzine zvuka u zraku(oko 340m/s) jer se onda zrak nebi mogao dovoljno brzo pomaknuti pa bi se formirale vibracije i efikasnost se jako smanji
+
+Polijetanje i uzdizanje
+
+Sad cemo racunati neke bitne stvari vezane uz sami let, kao sto su stall odnosno takeoff speed i koliko ce avionu vremena trebati da poleti
+
+Prvo moramo izracunati stall speed odnosno potrebna brzina da avion generira dovoljno lifta da ostane u zraku(ako je brzina ispod stall speeda avion pada, ako je visa onda se dize)
+
+Vs = √2W / (ρ * S * Clmax)
+
+Vs = √2*29.43 / (1.225 * 0.272 * 1.3)
+
+Vs ≈ 11.66m/s ≈ 46km/h
+
+Onda racunamo akceleraciju aviona, pomocu 2. Newtonovog zakona:
+
+a = F(thrust) / m
+
+a ≈ 4.44m/s²
+
+Sada racunamo vrijeme za polijetanje:
+
+t = V/a
+
+t ≈ 2.88s
+
+Racunamo potrebnu distancu za polijetanje:
+
+s = 1/2 * a * t²
+
+s - put(m)
+
+s ≈ 18.4m
+
