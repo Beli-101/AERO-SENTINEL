@@ -348,5 +348,46 @@ Elevator width = 0,11m
 <img width="610" height="272" alt="image" src="https://github.com/user-attachments/assets/16b2b80e-db13-4f78-9bd0-6de797e1c1f7" />
 
 
+ Vertical stabiliser 
+
+Vertical stabliser area = 33% of Horizontal area stabliser
+
+Vertical stabiliser area = 0,125m² * 0,33
+
+ Vertical stabiliser area = 0,042m²
+
+Rudder area is equal to 
+
+Rudder arrea = 33% of Vertical stabiliser area 
+
+Rudder area = 0,33 * 0,042m²
+
+ Rudder area = 0,015m²
+
+Considering vertical width is equal to horizontal width we can calculate the vertical height of the stabiliser and rudder. 
+
+ Vertical width = Horizontal width = 0,41m 
+
+Vertical area = Vertical width * Vertical width 
+
+Vertical height = Vertical area / Vertical width
+
+Vertical height = 0,042m² / 0,41m
+
+Vertical height = 0,1m
+
+Iz vertical height i rudder area, možemo izračunati  širinu ruddera. 
+
+Rudder area = Vrtical height * rudder width
+
+Rudder width = Rudder area / vertical height
+
+Rudder width = 0,015m² / 0,1 
+
+ Rudder width = 0,15m 
+
+
+
+
 
 
