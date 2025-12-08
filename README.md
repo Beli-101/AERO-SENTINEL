@@ -385,3 +385,6 @@ Rudder width = Rudder area / vertical height
 Rudder width = 0,015m² / 0,1 
 
  Rudder width = 0,15m 
+
+ <img width="672" height="402" alt="image" src="https://github.com/user-attachments/assets/b52aca3f-4eb6-469c-be99-47fe52be5999" />
+
