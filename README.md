@@ -292,36 +292,53 @@ s ≈ 18.4m
 Kako bi dobili površine, duljine i širine kontrolnih površina ( elevator, ailerons, rudder) prvo računamo wing area. 
 
 Wing area = span * chord 
+
 Wing area = 2,332m * 0,272m
+
 Wing area = 0,63m² 
+
 
 Iz toga možemo dobiti površinu horizontalne stabilizacije koja je:
 
 Horizontal stabiliser area = 20% od Wing area
+
 Horizontal stabiliser area = 0.2 * 0,63m²
+
 Horizontal stabiliser area = 0,125m²
 
 Iz sljedećeg izraza dobivamo horizontal lenght i onda iz općeg izraza za površinu i širinu: 
 
 Horizontal lenght = (wingspan /2 ) * 0,35
+
 Horizontal lenght =(2,32 /2 ) * 0,35
+
 Horizontal lenght = 0,41m
 
 Horizontal width = Horizontal area / Horizontal lenght
+
 Horizontal width = 0,125m² / 0,41m
+
 Horizontal width = 0,30m 
 
 
+
 Nakon toga računam površinu, duljinu i širinu elevatora: 
+
 Elevator area = 35% od Horizontal stabiliser area 
+
 Elevator area = 0,35 * 0,125mm²
+
 Elevator area = 0,044m²
+
 
 Elevator lenght = Horizontal lenght = 0,41m 
 
 Elevator width = Elevator area / elevator lenght 
+
 Elevator width = 0,044m² / 0,41m
+
 Elevator width = 0,11m
+
 
 <img width="610" height="272" alt="image" src="https://github.com/user-attachments/assets/16b2b80e-db13-4f78-9bd0-6de797e1c1f7" />
 
