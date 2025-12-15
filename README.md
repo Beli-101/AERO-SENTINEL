@@ -247,6 +247,7 @@ Iz vertical height i rudder area, možemo izračunati  širinu ruddera:
 Rudder width = Rudder area / vertical height
 
 **Rudder width = 0,0580m**
+
 <img width="720" height="369" alt="image" src="https://github.com/user-attachments/assets/52b06d1d-26d4-401b-b787-8c63ebe5e8e5" />
 
 
