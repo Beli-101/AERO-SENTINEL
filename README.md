@@ -170,26 +170,17 @@ s = 0.5*a*t2
 
 ## KONTROLNE POVRŠINE
 
+#### Horizontal stabiliser
 
-Kako bi dobili površine, duljine i širine kontrolnih površina ( elevator, ailerons, rudder) prvo računamo wing area. 
-<br>
-
-Wing area = span * chord 
+Nakon toga krenuli smo na kontrolne površine. Njihove dimenzije dobili smo uspoređivanjem omjera s drugima, tj. kada smo dobili wingarea (S), horizontalni stabilizator je bio npr. upola manji, pa smo tako računali i ostalo. 
 
 
-Wing area = 2,332m * 0,272m
+Horizontal stabiliser area (Hsa) = 20% od Wing area
 
+Horizontal stabiliser area = 0.2 * 0,48m²
 
-Wing area = 0,63m² 
+**Horizontal stabiliser area = 0,09426m²**
 
-
-Iz toga možemo dobiti površinu horizontalne stabilizacije koja je:
-<br>
-Horizontal stabiliser area = 20% od Wing area
-
-Horizontal stabiliser area = 0.2 * 0,63m²
-
-Horizontal stabiliser area = 0,125m²
 
 Iz sljedećeg izraza dobivamo horizontal lenght i onda iz općeg izraza za površinu i širinu: 
 
@@ -197,13 +188,13 @@ Horizontal lenght = (wingspan /2 ) * 0,35
 
 Horizontal lenght =(2,32 /2 ) * 0,35
 
-Horizontal lenght = 0,41m
+**Horizontal lenght = 0,5383m**
+
+
 
 Horizontal width = Horizontal area / Horizontal lenght
 
-Horizontal width = 0,125m² / 0,41m
-
-Horizontal width = 0,30m 
+**Horizontal width = 0,1758m**
 
 
 
@@ -211,60 +202,48 @@ Nakon toga računam površinu, duljinu i širinu elevatora:
 
 Elevator area = 35% od Horizontal stabiliser area 
 
-Elevator area = 0,35 * 0,125mm²
-
-Elevator area = 0,044m²
+**Elevator area = 0,03311m²**
 
 
-Elevator lenght = Horizontal lenght = 0,41m 
+**Elevator lenght = Horizontal lenght = 0,5383m**
+
 
 Elevator width = Elevator area / elevator lenght 
 
-Elevator width = 0,044m² / 0,41m
-
-Elevator width = 0,11m
+**Elevator width = 0,0615m**
 
 
-<img width="610" height="272" alt="image" src="https://github.com/user-attachments/assets/16b2b80e-db13-4f78-9bd0-6de797e1c1f7" />
 
 
- Vertical stabiliser 
+ #### Vertical stabiliser 
 
 Vertical stabliser area = 33% of Horizontal area stabliser
 
-Vertical stabiliser area = 0,125m² * 0,33
+**Vertical stabiliser area = 0,03127m²**
 
- Vertical stabiliser area = 0,042m²
-
-Rudder area is equal to 
 
 Rudder arrea = 33% of Vertical stabiliser area 
 
-Rudder area = 0,33 * 0,042m²
+**Rudder area = 0,0103m²**
 
- Rudder area = 0,015m²
 
 Considering vertical width is equal to horizontal width we can calculate the vertical height of the stabiliser and rudder. 
 
- Vertical width = Horizontal width = 0,41m 
+**Vertical width = Horizontal width = 0,1758m**
 
-Vertical area = Vertical width * Vertical width 
+
 
 Vertical height = Vertical area / Vertical width
 
-Vertical height = 0,042m² / 0,41m
+**Vertical height = 0,1776m**
 
-Vertical height = 0,1m
 
-Iz vertical height i rudder area, možemo izračunati  širinu ruddera. 
+Iz vertical height i rudder area, možemo izračunati  širinu ruddera: 
 
-Rudder area = Vrtical height * rudder width
+
 
 Rudder width = Rudder area / vertical height
 
-Rudder width = 0,015m² / 0,1 
+**Rudder width = 0,0580m** 
 
- Rudder width = 0,15m 
-
- <img width="672" height="402" alt="image" src="https://github.com/user-attachments/assets/b52aca3f-4eb6-469c-be99-47fe52be5999" />
 
