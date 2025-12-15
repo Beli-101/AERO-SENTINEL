@@ -1,13 +1,13 @@
 ## AERO-SENTINEL
 
-# APROXIMACIJA MASE
+### APROXIMACIJA MASE
 Prvo što smo krenuli raditi je bilo aproximirati masu cijelog našeg UAV-a. Zaključili smo da će masa tereta biti oko 1kg,
 a to smo zaključili zbog klijentovog zahtjeva da nosi 10 paketa seznora od 900g. Nakon toga odredili smo masu baterije – 1.5kg.
 Još smo nadodali masu senzora – 0,4kg i masu konstrukcije oko 2kg, te s tim ukupnu masu od 5kg. 
 
  **mass (m) = 5kg** 
 
-# SILE - WEIGHT I LIFT 
+### SILE - WEIGHT I LIFT 
 ![Why-Y-Z_Plane_force-01](https://github.com/user-attachments/assets/d4fb7316-1475-4dfa-876f-1dcdf2761129)
 
 Na ovoj slici vidimo 4 main sile koje djeluju na avion: **Lift, Weight, Thrust, Drag**
@@ -33,15 +33,19 @@ Lift = 1.1 * 49.05N
 **Lift = 53,955N**
 
 
-# POVRŠINA KRILA 
+### POVRŠINA KRILA 
 
 Za izračun daljnjih vrijednosti  poput ove prve koje računamo ( površina krila - S ) uzimamo neke konstante i vrijednosti koje smo dobili na prikazane načine:  
 
 NAvedene vrijednosti smo dobili iz tablica za izračun upravo tih vrijednosti. 
 
  **CL** - coefficent of lift - **0,67**
+ <img width="1279" height="293" alt="image" src="https://github.com/user-attachments/assets/66873edc-702a-4d21-9fc8-1bcc1fca6217" />
+
  
  **CLmax** - maximum coefficient of lift - **1,29** 
+ <img width="1249" height="303" alt="image" src="https://github.com/user-attachments/assets/219177c5-61b6-4f35-bee9-476ab26137ac" />
+
  
  **Cd** - coefficient of draag - **0,11**
 
@@ -51,268 +55,117 @@ NAvedene vrijednosti smo dobili iz tablica za izračun upravo tih vrijednosti.
 
 **ρ** - gustoća zraka at 1km  - **1,11 kg/m**
 
-SLjedeće vrijednosti smo si zadali, s obzirom da nam je cilj imati ih takve.
+Wing area (S) računa se iz sljedćeg izraza:
 
-**Aspect ratio - AR** - omjer između lenghta wingspana (span - s)  i widtha wignspana (chord - c). Mi smo odlučili da želimo što veći AR jer to značiu da imamo dugačka tanka krila koja su povoljna za cruisanje. 
-Dakle, **AR = 20**. 
+Tu imamo jos jednu nepoznanicu e koja je oswald efficiency factor sto je broj koji pokazuje koliko efikasno wing convertira lift u inducirani drag (uvijek je manji od 1). Prava krila imaju 0.7-0.95 oviseci o obliku i velicini
 
-Wing area (S) računa se iz sljedćeg izraza: 
+e ≈ (1.78 * (1 - 0.045 * AR^0.68) - 0.64λ) / (1 + 0.12λ)
+
+e ≈ 0.868
 
 <img width="420" height="87" alt="image" src="https://github.com/user-attachments/assets/47544915-41b6-448e-8b17-0cad9ba3a9ef" />
 
 Kada preformiramo formulu dobimo izraz za S ( Wing Area).
 
 **S = ρ * v * CL * 0,5**
+
 **S = 0,48m2**
 
 
+### IZRAČUN SPANA I CHORDA
 
+SLjedeće vrijednosti smo si zadali, s obzirom da nam je cilj imati ih takve.
 
+**Aspect ratio - AR** - omjer između lenghta wingspana (span - b)  i widtha wignspana (chord - c). Mi smo odlučili da želimo što veći AR jer to značiu da imamo dugačka tanka krila koja su povoljna za cruisanje. 
+Dakle, **AR = 20**. 
 
+Span (b) = SQRT (AR * S) 
+**s = 3,0761 m**
 
+Chord (c) = S / b 
+**c = 0,1538m**
 
+### WING LOAD 
 
-maksimalna brzina zraka koje avion mora izdrzati - 10m/s = 36km/h(odredeno od strane klijenta)
+Wing load = S / b 
+**Wing load = 103,67 N /m2**
 
-nasa minimalna brzina mora biti veca od maksimalne brzine zraka koje mora izdrzati ali naravno zelimo putovati idalje na relativno dobroj brzini tako da cemo postaviti:
-naša minimalna brzina - 16.67 m/s = 60km/h
 
-CL - 0,7
+### STALL SPEED
 
+Stall speed je minimalna brzina kojom se avion mora gibati. 
 
-možemo dobiti potreban wing surface area iz ove formule: 
+Vstall = SQRT(2W / (S * ρ * CLmax) --> ρ - 1,11kg / m3  (at 1km) 
 
-Lift = 1/2 * gustoća * brzina2 * površina krila * CL
+**Vstall = 12,0334 m/s** 
 
-površina krila = 2L / (gustoća * brzina2 * CL)
+### DRAG AND TRUST 
 
-površina krila = 0,272 m²
+**DRAG**
 
-S = c * b
+Sad krećemo na druge dvije dosta bitne sile, **DRAG I TRUST**.
 
-površina krila = chord * span
+Drag (D) = 0,5*ρ*v2*S*CD
+**Drag = 8,0235N**
 
-za sada ne mozemo dobiti najpreciznije brojke jer nemamo dovoljno parametara jer chord moze biti 0.52 i span 0.52 a moze biti i totalno drugacije, tako da uvodimo jos jedan parametar: ASPECT RATIO
-aspect ratio je omjer izmedu chorda i spana(u pravilu veci aspect ratio znaci bolji glide i bolji lift to drag ratio sto znaci da je efikasniji let.
-Shvatili smo da ce na nasim "umanjenim" velicinama nepotrebno otezat ako probamo ic za veci aspect ratio od 20, tako da cemo uzet 20 za ovaj izracun
-Zatim imamo formulu
+**TRUST**
 
-AR = b² / S
+Razlikovat ćemo 3 vrste trusta - trust cruising, trust asceding and trust until liftoff. 
 
-aspect ratio = span² / wing area
+First for **trust cruising**: 
 
-span² = AR * S
+Tc = W / (Cl / Cd) 
 
-span² = 5.44m²
+**Tc = 8,05N**
 
-span = 2.332m
+**Trust ascending**
 
-sada imamo i span, a to znaci da preko nje mozemo dobiti chord
+Vv = 5m/s
 
-S = c * b
+V = 16m/s
 
-c = S / b
+Tasc = D + W*sin(Vv/V)
+**Tasc = 22,5187N**
 
-c = 0.272m
+**Trust until liftoff:**
 
-c = 0.117m² / 2.332m
+That is the trust we need to get to liftoff.
 
-ovo je prosjecan chord, a mi imamo tapered wing, tako da cemo sad koristiti sljedecu formulu:
-sada uvodimo novi parametar λ sto je taper ratio, a on nam je 0.4(sto znaci da je tip 40% od root chorda) i dobili smo ga tako da smo podjelili chord na tipu i chord na rootu(1.0 ima pravokutno krilo, >0.3 je jako suzeno krilo)
+Ovo su svi faktori koje moramo uzeti u obzir : sila trenja, sila temeljnog zakona gibanja, i drag koji moramo beatat. 
 
-MAC = cr * 2/3 * (1 + λ + λ²) / (1 + λ)
+Dakle: 
 
-gdje je MAC mean aerodynamic chord odnosno prosjecan(to smo izracunali u proslom racunu)
+T = ma + D + Ftr
 
-cr je root chord
+**Ftr = μ * m * g --> μ = 0,8 ( između suhog betona i gume )  = 39,24N**
 
-λ taper ratio
+**T = 69,2635N**
 
 
-0.117m = 0.7429 cr
+### OPĆI PODATCI 
 
-cr = 0.1575m
+- vrijeme, distanca i brzina lifotffa:
 
-a ako je root chord 0.1575m onda lako izracunamo i tip chord:
+#### brzina poleta (vf): 
 
-ct = λ * cr
+vf = sqrt(2W/(rho*S*CL)
 
-ct = 0.063m
+**vf = 15,8924m/s**
 
+#### vrijeme poleta
 
-Sada racunamo stall speed, odnosno brzina na kojoj se avion krene naginjati prema dole(brzina nije dovoljna da maintaina flight
+tf = vf/a --> a = 4,4m/s2
 
-Vs = √(2W / (ρ * S * Clmax)
+**tf = 3,61s**
 
-vstall = √(2 * Weight / (rho * wing area * max coefficient of lift)
+#### distanca poleta (s)
 
-Clmax ≈ 1.3
+s = 0.5*a*t2
 
-Vs = √(2 * 29.43 / (1.225 * 0.272 * 1.3)
+**s = 28,7075m**
 
-Vs = 11.657m/s
 
-Vs = 41.97km/h
 
-Sada racunamo drag aviona, tako da imamo formulu:
-
-D = 0.5 * ρ * V² * S * Cd
-
-Tu nam je nepoznat Cd, a formula za drag coefficient je:
-
-Cd = Cd0 + Cdi
-
-drag coefficient = profile drag(parasite drag) + induced drag
-
-prvo racunamo inducirani drag odnosno drag koji se stvori:
-
-Cdi = (Cl² / (π * AR * e))
-
-tu imamo jos jednu nepoznanicu e koja je oswald efficiency factor sto je broj koji pokazuje koliko efikasno wing convertira lift u inducirani drag (uvijek je manji od 1). Prava krila imaju 0.7-0.95 oviseci o obliku i velicini
-
-e ≈ (1.78 * (1 - 0.045 * AR^0.68) - 0.64λ) / (1 + 0.12λ)
-
-e ≈ 0.868
-
-Sada kad imamo oswald efficiency mozemo izracunati inducirani drag:
-
-Cdi = (Cl² / (π * AR * e))
-
-Cdi = (0.7 / (π * 20 * 0.868))
-
-Cdi = 0.09
-
-zato jer imamo lagano krilo koje ce biti smooth i tanko, mozemo estimirati:
-Cd0 = 0.02
-
-Onda dobijamo:
-
-Cd = Cd0 + Cdi
-
-Cd = 0.11
-
-Prema tome sada mozemo dobiti drag:
-
-D = 0.5 * ρ * V² * S * Cd
-
-D = 0.5 * 1.225 * 16.67 * 0.272 * 0.11
-
-D = 5.1N
-
-Sto znaci da na brzini od 60km/h imamo drag 5.1N
-
-Preko ovoga mozemo pogledat koji nam motor otprilike treba:
-
-P = D * V
-
-snaga = drag * brzina
-
-P = 83.35W
-
-To znaci da nam treba snaga od 85W da bi maintainali flight 60km/h
-
-Ako cemo imati dva motora, to znaci da ce motori biti snage 42.5W
-
-Mozemo izracunati jos par stvari koje ce nam mozda trebati:
-
-Wing loading odnosno omjer mase aviona na wing area:
-
-W/S = 29.43N / 0.272m² = 108.3 N/m²
-
-Sada krecemo na racunanje thrusta potrebnog za odredenu vertikalnu brzinu(climb rate) i ostale stvari kao baterija, komponenta, propeler
-
-Prvo idemo na racunanje thrusta potrebnog da bi se avion dizao 5m/s vertikalno dok se krecemo brzinom od 60km/h(16.67m/s)
-
-T = D + (W/V) * Vz
-
-Gdje je:
-
-T - thrust(ukupan)
-
-D - Drag
-
-W - Weight
-
-V - velocity
-
-Vz - vertical velocity
-
-Kada uvrstimo brojeve to je:
-
-T = 5.1N + (29.43N/16.67m/s) * 5m/s
-
-T = 13.925N
-
-Odnosno na konfiguraciji sa dva motora:
-
-T = 13.925/2 ≈ 6.96N
-
-Sada trazimo motor, a ovo su requirementi za njega:
-
-Mora handleat 6.96N thrusta po motoru
-
-Mora biti kompatibilan sa 4S LiPo baterijom(14.8V)
-
-Mora biti efikasan da drzi let 3 sata
-
-Izabrao sam motor: FW‑B3536
-
-Slaze se sa requirementima, ima masu 105.8g i u puno konfiguracija moze je dovoljan za nase potrebe struje i proizvodi dovoljno thrusta
-
-Sada trazimo kombinaciju takvog motora i propelera:
-
-cilj je dobiti balans izmedu thrusta(za dizanje i ubrzanje) i efikasnosti(za cruise)
-
-Na stranici motora imaju podaci o tocno onome sto trebamo odnosno postoji tablica sa razlicitim setupovima motora i propelera i svi ostali parametri koji ce nam trebat(snaga, thrust itd.)
-
-Nakon provjere tablice izabrali smo APC 10x5 propeler sa 1000KV(koliko rpma ima po voltu) motorom
-
-Sad mozemo estimirati okretaje po minuti odnosno RPM:
-
-RPM = KV * Vbaterije
-
-RPM = 1000 * 14.8
-
-RPM ≈ 14800
-
-Sada racunamo brzinu propelera dok se vrti
-
-V = RPM * r * 2π / 60
-V = 196.8m/s
-
-Sto je ova brzina veca to je veci thrust i brzina nebi trebala biti brza od brzine zvuka u zraku(oko 340m/s) jer se onda zrak nebi mogao dovoljno brzo pomaknuti pa bi se formirale vibracije i efikasnost se jako smanji
-
-Polijetanje i uzdizanje
-
-Sad cemo racunati neke bitne stvari vezane uz sami let, kao sto su stall odnosno takeoff speed i koliko ce avionu vremena trebati da poleti
-
-Prvo moramo izracunati stall speed odnosno potrebna brzina da avion generira dovoljno lifta da ostane u zraku(ako je brzina ispod stall speeda avion pada, ako je visa onda se dize)
-
-Vs = √2W / (ρ * S * Clmax)
-
-Vs = √2*29.43 / (1.225 * 0.272 * 1.3)
-
-Vs ≈ 11.66m/s ≈ 46km/h
-
-Onda racunamo akceleraciju aviona, pomocu 2. Newtonovog zakona:
-
-a = F(thrust) / m
-
-a ≈ 4.44m/s²
-
-Sada racunamo vrijeme za polijetanje:
-
-t = V/a
-
-t ≈ 2.88s
-
-Racunamo potrebnu distancu za polijetanje:
-
-s = 1/2 * a * t²
-
-s - put(m)
-
-s ≈ 18.4m
 
 
 ## KONTROLNE POVRŠINE
