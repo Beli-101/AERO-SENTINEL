@@ -279,13 +279,13 @@ Prvo računamo aspect ratio elevatora:
 
 ARe = be² / S 
 
-**ARe = 0,76**
+**ARe = 8,75**
 
 Nakon: 
 
 Cle ( koeficijent lifta elevatora ) = CLX * 0,9 * elevator deflection 
 
-**CLe = 0,35**
+**CLe = 0,3523**
 
 Nakon: 
 
@@ -293,19 +293,19 @@ Inducirani koeficijent draga:
 
 Cdi = CL² / (π*e*ARe)
 
-**Cdi = 0,06**
+**Cdi = 0,005**
 
 Ukkupni koeficijent draga je: 
 
 Cd = CD0 + Cdi
 
-***Cd = 0,072**
+***Cd = 0,017**
 
 I za kraj računamo drag na kontrolnoj površini, a to je: 
 
 De = 0.5 * ρ * v² * CD * Se
 
-**De = 3,6N**
+**De = 0,08N**
 
 
 
