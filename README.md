@@ -1,49 +1,76 @@
-# AERO-SENTINEL
+## AERO-SENTINEL
 
-Klijent određuje dimenzije senzora ( 65mm*36mm, 90g ) i želi prenositi 10 takvih sennzora. Raspoređujemo ih u raspored 5x2, te dobivamo sljedeće: 
+# APROXIMACIJA MASE
+Prvo što smo krenuli raditi je bilo aproximirati masu cijelog našeg UAV-a. Zaključili smo da će masa tereta biti oko 1kg,
+a to smo zaključili zbog klijentovog zahtjeva da nosi 10 paketa seznora od 900g. Nakon toga odredili smo masu baterije – 1.5kg.
+Još smo nadodali masu senzora – 0,4kg i masu konstrukcije oko 2kg, te s tim ukupnu masu od 5kg. 
 
-Površina = (a * senzorix) * (b * senzoriy)
+ **mass (m) = 5kg** 
 
-Površina = (6.5 * 5) * (3.6*2) = 234 cm²
-
-Masa tereta = 0.09 * 10 = 0,9kg + 10% = 1kg
-
-Što se tiče fusilagea, s obzirom da motori idu na wingove, jedina dosta teška komponenta koju nosi je baterija. Ako dodamo i sve ostale komponente masa fusilagea ( PCB, gps, receiver, servos, ...) ne prelazi ni 1kg.
-
-Ako sad uzmemo u obzir i one motore na krilima i ostatak tijela aviona, masa bi bila oko 3kg. 
-
-
-
+# SILE - WEIGHT I LIFT 
 ![Why-Y-Z_Plane_force-01](https://github.com/user-attachments/assets/d4fb7316-1475-4dfa-876f-1dcdf2761129)
 
-Na ovoj slici vidimo 4 main sile koje djeluju na avion: Lift, Weight, Thrust, Drag
-Za sad cemo samo gledat samo dvije sile: Weight i Lift
-Weight je sila teza na hrvatskom
-Formula za weight je m * g, gdje je m masa objekta(kg), a g je akceleracija sile teze(m/s²)
-Weight ce se mijenjati ali skoro je neprimjetna razlika, razlog tome je sto se akceleracija sile teze mijenja oviseci o tome gdje se nalazimo(na ekvatoru je 9.78m/s², a na polovima je 9.83m/s²)
+Na ovoj slici vidimo 4 main sile koje djeluju na avion: **Lift, Weight, Thrust, Drag**
+Nakon što smo dobili masu izračunali smo težinu po općoj formuli:
 
-Weight = m * g
 
-weight = 3kg * 9,81m/s² 
+W ( Weight)  = m*g. --> (g = 9,81m/s) 
 
-weight = 29.43N 
+W = 5 * 9,81
 
-Sljedecu silu koju gledamo je lift odnosno sila uzgona
-Razlog zasto gledamo lift i weight je zato jer su to osnovne sile koje odreduju hoce li i koliko nas avion poletjeti
-Vidimo na prijasnjoj slici da su lift i weight suprotnoga smjera(lift prema gore, weight prema dole) sto znaci da za rezultantnu ne trebamo racunati kut nego samo zbrajamo i oduzimamo(smjer rezultante je smjer vece sile). Nas avion ce letjeti kada je lift veci nego weight, ali naravno sto je veci, to ide brze prema gore. 
+**W = 49,05N**
 
-Kada budemo racunali lift, kao potreban lift necemo stavljat iznos jednak weightu nego 5-10% veci jer nikad ne leti u savrsenim uvjetima.
-avion treba extra lift da bi skretao, ispravljao ometanja i drzao avion stabilnim, jer da je isti avion bi imao 0 mjesta za promasaj.
+Sljedecu silu koju gledamo je lift odnosno sila uzgona (LIFT). Razlog zasto gledamo lift i weight je zato jer su to osnovne sile koje odreduju hoce li i koliko nas avion poletjeti. 
+Vidimo na prijasnjoj slici da su lift i weight suprotnoga smjera(lift prema gore, weight prema dole) sto znaci da za rezultantnu ne trebamo racunati kut nego samo zbrajamo i oduzimamo(smjer rezultante je smjer vece sile). Nas avion ce letjeti kada je lift veci nego weight, ali naravno sto je veci, to ide brze prema gore. Kada budemo racunali lift, kao potreban lift necemo stavljat iznos jednak weightu nego 5-10% veci jer nikad ne leti u savrsenim uvjetima.
+Avion treba extra lift da bi skretao, ispravljao ometanja i drzao avion stabilnim, jer da je isti avion bi imao 0 mjesta za promasaj.
 
-Lift = 1.1 * weight
 
-Lift = 1.1 * 29.43N
 
-Lift = 32.373N
+Lift = 1.1 * W 
 
-Iz toga i još nekih poznatih podatak poput: 
+Lift = 1.1 * 49.05N
 
-gustoća zraka - 1,225 kg / m³
+**Lift = 53,955N**
+
+
+# POVRŠINA KRILA 
+
+Za izračun daljnjih vrijednosti  poput ove prve koje računamo ( površina krila - S ) uzimamo neke konstante i vrijednosti koje smo dobili na prikazane načine:  
+
+NAvedene vrijednosti smo dobili iz tablica za izračun upravo tih vrijednosti. 
+
+ **CL** - coefficent of lift - **0,67**
+ 
+ **CLmax** - maximum coefficient of lift - **1,29** 
+ 
+ **Cd** - coefficient of draag - **0,11**
+
+ Navedene vrijednosti su neke konstante: 
+
+**ρ0** - gustoća zraka at 0km - **1,225 kg/m**
+
+**ρ** - gustoća zraka at 1km  - **1,11 kg/m**
+
+SLjedeće vrijednosti smo si zadali, s obzirom da nam je cilj imati ih takve.
+
+**Aspect ratio - AR** - omjer između lenghta wingspana (span - s)  i widtha wignspana (chord - c). Mi smo odlučili da želimo što veći AR jer to značiu da imamo dugačka tanka krila koja su povoljna za cruisanje. 
+Dakle, **AR = 20**. 
+
+Wing area (S) računa se iz sljedćeg izraza: 
+
+<img width="420" height="87" alt="image" src="https://github.com/user-attachments/assets/47544915-41b6-448e-8b17-0cad9ba3a9ef" />
+
+Kada preformiramo formulu dobimo izraz za S ( Wing Area).
+
+**S = ρ * v * CL * 0,5**
+**S = 0,48m2**
+
+
+
+
+
+
+
 
 maksimalna brzina zraka koje avion mora izdrzati - 10m/s = 36km/h(odredeno od strane klijenta)
 
