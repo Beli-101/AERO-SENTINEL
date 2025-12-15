@@ -307,6 +307,21 @@ De = 0.5 * ρ * v² * CD * Se
 
 **De = 0,08N**
 
+<img width="963" height="400" alt="image" src="https://github.com/user-attachments/assets/1723c241-3d77-4f29-992d-57ad8ba7e068" />
+
+Evo slike iz našeg excel kalkulatora kojeg smo koristili za računanje draga na elevatoru, u kalkulatoru možete mijenjati kuut pod kojim je elevator, a s tim se mijenja i drag na njemu. 
+
+#### 2. DRAG NA RUDDERU 
+
+Računa se na isti način kao i drag na elevatoru, samo s površinom ruddera i s rudder vrijednostima
+
+<img width="962" height="397" alt="image" src="https://github.com/user-attachments/assets/cc56f3fe-cf8e-4beb-b4bf-3e070a1a4aae" />
+
+
+
+
+
+
 
 
 
