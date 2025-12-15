@@ -14,7 +14,7 @@ Na ovoj slici vidimo 4 main sile koje djeluju na avion: **Lift, Weight, Thrust, 
 Nakon što smo dobili masu izračunali smo težinu po općoj formuli:
 
 
-W ( Weight)  = m*g. --> (g = 9,81m/s) 
+W ( Weight)  = m*g. --> (g = 9,81m/s²) 
 
 W = 5 * 9,81
 
@@ -51,9 +51,9 @@ NAvedene vrijednosti smo dobili iz tablica za izračun upravo tih vrijednosti.
 
  Navedene vrijednosti su neke konstante: 
 
-**ρ0** - gustoća zraka at 0km - **1,225 kg/m**
+**ρ0** - gustoća zraka at 0km - **1,225 kg/m³**
 
-**ρ** - gustoća zraka at 1km  - **1,11 kg/m**
+**ρ** - gustoća zraka at 1km  - **1,11 kg/m³**
 
 Wing area (S) računa se iz sljedćeg izraza:
 
@@ -67,9 +67,9 @@ e ≈ 0.868
 
 Kada preformiramo formulu dobimo izraz za S ( Wing Area).
 
-**S = ρ * v * CL * 0,5**
+**S = ρ * v² * CL * 0,5**
 
-**S = 0,48m2**
+**S = 0,48m²**
 
 
 ### IZRAČUN SPANA I CHORDA
@@ -88,14 +88,14 @@ Chord (c) = S / b
 ### WING LOAD 
 
 Wing load = S / b 
-**Wing load = 103,67 N /m2**
+**Wing load = 103,67 N /m²**
 
 
 ### STALL SPEED
 
 Stall speed je minimalna brzina kojom se avion mora gibati. 
 
-Vstall = SQRT(2W / (S * ρ * CLmax) --> ρ - 1,11kg / m3  (at 1km) 
+Vstall = SQRT(2W / (S * ρ * CLmax) --> ρ - 1,11kg / m³  (at 1km) 
 
 **Vstall = 12,0334 m/s** 
 
@@ -154,17 +154,25 @@ vf = sqrt(2W/(rho*S*CL)
 
 #### vrijeme poleta
 
-tf = vf/a --> a = 4,4m/s2
+tf = vf/a --> a = 4,4m/s²
 
 **tf = 3,61s**
 
 #### distanca poleta (s)
 
-s = 0.5*a*t2
+s = 0.5*a*t²
 
 **s = 28,7075m**
 
+#### SNAGA NA MOTORIMA (P)
 
+P = D * v
+
+**P = 134,2164W**
+
+S obzirom da koristimo dva motora, raspodjeljujemo snagu na dva dijela: 
+
+**P = 67,10W**
 
 
 
@@ -249,6 +257,59 @@ Rudder width = Rudder area / vertical height
 **Rudder width = 0,0580m**
 
 <img width="720" height="369" alt="image" src="https://github.com/user-attachments/assets/52b06d1d-26d4-401b-b787-8c63ebe5e8e5" />
+
+
+## DRAG NA KONTROLNIM POVRŠINAMA 
+
+#### 1. ELEVATOR 
+
+Potrebni su nam sljedeći elementi: 
+
+Elevator area - 0,03311 m²
+Elevator span - 0,5383m 
+Speed - 16,67m/s
+ρ - 1,11 kg / m³
+Elevator deflection - 5° or 0,087rad  ( u ovom slučaju / primjeru 5°, neđutim imamo kalkulator u kojem se može mijenjati kut i dobiti drag. )
+CLX = 4,5
+e - 0,868
+η = 0,9 
+CD0 = 0,012
+
+Prvo računamo aspect ratio elevatora: 
+
+ARe = be² / S 
+
+**ARe = 0,76**
+
+Nakon: 
+
+Cle ( koeficijent lifta elevatora ) = CLX * 0,9 * elevator deflection 
+
+**CLe = 0,35**
+
+Nakon: 
+
+Inducirani koeficijent draga: 
+
+Cdi = CL² / (π*e*ARe)
+
+**Cdi = 0,06**
+
+Ukkupni koeficijent draga je: 
+
+Cd = CD0 + Cdi
+
+***Cd = 0,072**
+
+I za kraj računamo drag na kontrolnoj površini, a to je: 
+
+De = 0.5 * ρ * v² * CD * Se
+
+**De = 3,6N**
+
+
+
+
 
 
 
