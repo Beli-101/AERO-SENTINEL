@@ -318,6 +318,25 @@ Računa se na isti način kao i drag na elevatoru, samo s površinom ruddera i s
 <img width="962" height="397" alt="image" src="https://github.com/user-attachments/assets/cc56f3fe-cf8e-4beb-b4bf-3e070a1a4aae" />
 
 
+# KONTROLA KONTROLNIH POVRŠINA
+Za kontrolu kontrolnih površina koristit ćemo 4 serva.
+
+### Princip rada za ailerone: 
+
+Stajati će ovako. Bit će ostavljeno mjest oza njih u strukturi, tj. airframe-u. Bit će točno izvan krila, ostavit ćemo taman kanalić za shaft. 
+
+<img width="551" height="417" alt="image" src="https://github.com/user-attachments/assets/a20c561f-f355-4b8f-b61e-359302994bec" />
+
+Princip rada će bit jedan tanak shaft koji natankemo na servo. Na tom shaft imamo neke kao kosti ailerona, koji kada se servo okrene, dižu ailerone s njima. 
+
+<img width="523" height="202" alt="image" src="https://github.com/user-attachments/assets/be4938bb-7382-4dd9-8c0d-b132920ddbef" />
+
+I takav ćemo isti imati i na drugoj strani koji vrti kontra od ovog prvog jer aileroni moraju uvijek biti kontra okrenuti.
+
+**Broj serva: 2**
+
+### Princip rada za elevatore: 
+
 
 
 
