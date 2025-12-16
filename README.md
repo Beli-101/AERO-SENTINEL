@@ -335,7 +335,20 @@ I takav ćemo isti imati i na drugoj strani koji vrti kontra od ovog prvog jer a
 
 **Broj serva: 2**
 
-### Princip rada za elevatore: 
+### Princip rada za rudder:
+
+Princip rada kao i za jedan od elevatora
+
+Pozicija u fusilagea:
+
+<img width="550" height="413" alt="image" src="https://github.com/user-attachments/assets/a059d9fc-d931-4bac-8dca-a7ca88b92fe6" />
+
+**Broj serva: 1**
+
+### Princip rada za elevatore
+
+
+
 
 
 
