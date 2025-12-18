@@ -330,7 +330,7 @@ Slika mehanizma:
 
 Poziciju u fusilageu budemo dodali kad ćemo imati fusilage. 
 
-**Elavator:**
+**Elavator i aileroni:**
 
 Slično kao i za rudder, samo vodoravno i prilagođeno za dva odjednom. 
 
