@@ -341,17 +341,22 @@ Slika mehanizma:
 
 
 
-# LANDING GEAR 
+# LANDING GEAR - in progress ( brakes, steering nekak rješit) 
 
 <img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/217597f8-3058-44fc-a95f-e93b98d70801" />
 
-1 - puzzle piece 1 
-2 - puzzle piece 2 
-3 - main point - koji je pullan sajlom za sklapanje svega. 
+1 - puzzle piece 1
+
+2 - puzzle piece 2
+
+3 - main point - koji je pullan sajlom za sklapanje svega.
+
 F - fixed, dio aviona. 
 
 Kada sajla povuče main point (3) towards inside. S obzirom da je  puzzle piece 1 i 2 spojen na main point koji ide prema unutra, svi idu prema unutra i slažu se kao puzzla. 
 
+
+ Naravno, još uzimamo u obzir da će dolje biti i suspenzije, no to ćemo dodati u dizajnu. 
 
  
 
