@@ -319,33 +319,27 @@ Računa se na isti način kao i drag na elevatoru, samo s površinom ruddera i s
 
 
 # KONTROLA KONTROLNIH POVRŠINA
-Za kontrolu kontrolnih površina koristit ćemo 4 serva.
 
-### Princip rada za ailerone: 
+**Rudder:**
 
-Stajati će ovako. Bit će ostavljeno mjest oza njih u strukturi, tj. airframe-u. Bit će točno izvan krila, ostavit ćemo taman kanalić za shaft. 
+Princip rada: Na stražnjem dijelu ruddera imamo jedan kao U oblikovan dio koji sa svake strane ima pričvrščen jedan dio sajle. Sajla je jedna, i okreće se oko serva. Morati ćemo napraviti ko male zube za sajlu kako bi ju .mogao kretati servo. 
 
-<img width="551" height="417" alt="image" src="https://github.com/user-attachments/assets/a20c561f-f355-4b8f-b61e-359302994bec" />
+Slika mehanizma: 
 
-Princip rada će bit jedan tanak shaft koji natankemo na servo. Na tom shaft imamo neke kao kosti ailerona, koji kada se servo okrene, dižu ailerone s njima. 
+<img width="600" height="800" alt="image" src="https://github.com/user-attachments/assets/3dbdae5d-9190-476f-bd2a-3918282847f9" />
 
-<img width="523" height="202" alt="image" src="https://github.com/user-attachments/assets/be4938bb-7382-4dd9-8c0d-b132920ddbef" />
+Poziciju u fusilageu budemo dodali kad ćemo imati fusilage. 
 
-I takav ćemo isti imati i na drugoj strani koji vrti kontra od ovog prvog jer aileroni moraju uvijek biti kontra okrenuti.
+**Elavator:**
 
-**Broj serva: 2**
+Slično kao i za rudder, samo vodoravno i prilagođeno za dva odjednom. 
 
-### Princip rada za rudder:
+Slika mehanizma:
 
-Princip rada kao i za jedan od elevatora
+<img width="450" height="650" alt="image" src="https://github.com/user-attachments/assets/b836e0bf-4493-406d-8b42-c8e43a388c7c" />
 
-Pozicija u fusilagea:
 
-<img width="550" height="413" alt="image" src="https://github.com/user-attachments/assets/a059d9fc-d931-4bac-8dca-a7ca88b92fe6" />
 
-**Broj serva: 1**
-
-### Princip rada za elevatore
 
 
 
