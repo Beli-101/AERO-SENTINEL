@@ -353,7 +353,7 @@ Slika mehanizma:
 
 F - fixed, dio aviona. 
 
-Kada sajla povuče main point (3) towards inside. S obzirom da je  puzzle piece 1 i 2 spojen na main point koji ide prema unutra, svi idu prema unutra i slažu se kao puzzla. 
+Kada sajla povuče main point (3) towards inside, s obzirom da je  puzzle piece 1 i 2 spojen na main point,  koji ide prema unutra, svi idu prema unutra i slažu se kao puzzla. 
 
 
  Naravno, još uzimamo u obzir da će dolje biti i suspenzije, no to ćemo dodati u dizajnu. 
