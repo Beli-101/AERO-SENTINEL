@@ -1,0 +1,57 @@
+Sile
+U pravocrtnom, horizontalnom i neubrzanom letu na zrakoplov djeluju četiri osnovne sile: uzgon, drag, težina i thrust. Uzgon je sila koja djeluje prema gore i omogućuje zrakoplovu da ostane u zraku, dok je težina sila gravitacije koja vuče 
+zrakoplov prema dolje. Thrust je sila koja gura zrakoplov prema naprijed, a stvara ju pogonski sustav, dok je drag sila koja se suprotstavlja gibanju zrakoplova kroz zrak. Težina i drag  prirodne su sile koje djeluju na svako tijelo, dok su 
+uzgon i potisak umjetno stvoreni kako bi omogućili let.
+Uzgon nastaje kada se krilo, odnosno njegov airfoil , kreće kroz zrak. Zbog zakrivljenosti gornje površine krila zrak iznad krila struji brže nego zrak ispod njega, što uzrokuje smanjenje tlaka iznad krila i veći tlak ispod krila. Ta razlika 
+tlaka stvara silu koja podiže zrakoplov. Istodobno krilo skreće zrak prema dolje, a prema zakonu akcije i reakcije zrak djeluje silom prema gore, što dodatno doprinosi uzgonu. Uzgon ne stvaraju samo krila, već u manjoj mjeri i druge površine 
+zrakoplova, poput repnih površina, propelera i trupa.
+Količina uzgona ovisi o obliku airfoila, brzini gibanja zrakoplova kroz zrak i kutu napada, odnosno kutu između krila i smjera strujanja zraka. 
+Težina djeluje suprotno uzgonu, zbog čega se zrakoplovi projektiraju što lakšima, a tijekom uporabe strogo se kontrolira ukupna masa i raspored tereta. Položaj težišta izuzetno je važan jer značajno utječe na stabilnost i upravljivost zrakoplova.
+
+Thrust djeluje suprotno dragu i omogućuje zrakoplovu da postigne i održava potrebnu brzinu. Kod propelerskih zrakoplova potisak nastaje ubrzavanjem mase zraka unatrag pomoću propelera, dok kod mlaznih zrakoplova potisak nastaje usisavanjem, 
+kompresijom, sagorijevanjem goriva i izbacivanjem plinova velikom brzinom. 
+Drag se sastoji od parazitskog i induciranog otpora. Parazitski otpor nastaje zbog trenja zraka uz površinu zrakoplova, njegovog oblika i različitih spojeva te raste s povećanjem brzine. Inducirani otpor nastaje kao posljedica stvaranja 
+uzgona i raste s povećanjem kuta napada, osobito pri malim brzinama. Kako bi se otpor smanjio, zrakoplovi se aerodinamički oblikuju, koriste se glatke površine i uvlačni stajni trap.
+Oblik krila također utječe na aerodinamička svojstva zrakoplova, uključujući količinu uzgona, otpora i ponašanje pri stallu. Različiti oblici krila imaju različite prednosti i nedostatke, a njihov izbor ovisi o namjeni i režimu leta zrakoplova.
+
+Aerodynamic control 
+Zrakoplovi koriste različite aerodynamic devices kako bi prema potrebi povećali lift ili drag, posebno tijekom descenta, prilaza slijetanju, slijetanja i nakon touchdowna. Povećanje draga omogućuje usporavanje zrakoplova, a postiže se 
+pomoću speed brakes, spoilers, flaps i izvlačenjem landing geara. Budući da su lift i drag proporcionalni wing area, dizajneri nastoje smanjiti stalni drag manjom površinom krila, dok se dodatni lift privremeno dobiva mehaničkim povećanjem 
+wing area i cambera pomoću flapsa i leading-edge devices.
+
+Flaps se nalaze na trailing edgeu krila i mogu se zakretati prema dolje kako bi povećali lift i drag. Manji flap angles uglavnom povećavaju lift više nego drag, dok veći flap angles značajno povećavaju drag. Postoje različite vrste flapsa, 
+poput split flaps, Fowler flaps i Krueger flaps. Moderni zrakoplovi koriste kombinacije trailing-edge flapsa s leading-edge slats i slots, koji poboljšavaju airflow preko krila, odgađaju stall i omogućuju let pri većem angle of attacku.
+Postavke ovih uređaja prilagođavaju se flight regimeu: pri takeoffu i approachu koriste se za povećanje lifta, dok se za brzo deceleration u letu ili nakon landinga koriste za povećanje draga. Sve aerodinamičke sile na zrakoplovu pilot 
+kontrolira pomoću primary flight controls.
+
+
+Kontrolne površine 
+Elevator, koji je smješten na horizontal stabilizeru, upravlja rotacijom oko lateral axis i izravno kontrolira angle of attack. Pomicanjem control columna naprijed elevator se spušta, nos zrakoplova ide prema dolje, a rep prema gore, 
+dok povlačenje columna unatrag ima suprotan učinak. Kod mnogih modernih zrakoplova elevator i stabilizer spojeni su u jednu površinu – stabilator.
+Aileronsi, smješteni na trailing edgeu krila, kreću se suprotno jedan drugome i upravljaju rotacijom oko longitudinal axis. Kada pilot zada lijevi input, desni aileron se spušta, a lijevi podiže, čime se povećava lift na jednom krilu i 
+smanjuje na drugom. Ta razlika u liftu uzrokuje naginjanje zrakoplova i početak zaokreta.
+Rudder je vertikalna upravljačka površina koja upravlja rotacijom oko vertical axis, ali ne uzrokuje sam zaokret. Njegova je uloga suzbijanje adverse yawa koji nastaje zbog razlike u liftu i dragu između krila tijekom korištenja aileronsa. 
+Kako zaokret uzrokuje ukupno smanjenje lifta, potrebno je dodatno koristiti elevator, pa je pravilno izvođenje zaokreta rezultat koordinirane uporabe aileronsa, ruddera i elevatora.
+
+
+Wings
+Zrakoplovi se mogu kategorizirati prema konfiguraciji krila i tipu stajnog trapa. Po broju krila razlikuju se monoplanes (jedno krilo), biplanes (dva krila jedno iznad drugog), rijetko triplanes ili quadplanes, a tandem-wing aircraft ima 
+dva krila postavljena jedno iza drugog. Oblik krila gledano odozgo, odnosno wing planform, također varira: delta wings su trokutastog oblika (npr. Concorde), swept wings su zakrenuta unatrag, dok neki istraživački i vojni zrakoplovi koriste 
+forward-swept wings.
+Zrakoplovi se također razlikuju po tipu stajnog trapa. Conventional gear ima dva glavna kotača sprijeda i tailwheel, dok tricycle gear ima nosni kotač i dva glavna kotača. Bicycle gear sastoji se od dva glavna kotača u trupu i pomoćnih 
+kotača na krilima. Veliki zrakoplovi, poput Boeinga 747, koriste multiple bogies za raspodjelu težine i lakše uvlačenje u letu.
+
+UAV 
+Propulzija UAV-a srednje veličine treba se promatrati kao cjelina u kojoj su motor i propeller usko povezani i ne mogu se razmatrati odvojeno. Potreban thrust uvijek se definira u odnosu na ukupnu težinu letjelice, uz dovoljnu rezervu 
+kako bi se osigurao pouzdan takeoff i stabilan climb. Veći thrust-to-weight omjer pozitivno utječe na kraću takeoff distance, lakšu kontrolu tijekom ubrzanja te bolju otpornost na povećani drag i nepovoljne atmosferske uvjete.
+Električni pogon s BLDC motorom najčešći je izbor zbog dobre učinkovitosti, jednostavne regulacije i pouzdanog rada. Odabir motora ne temelji se samo na njegovoj nazivnoj snazi, već prvenstveno na tome koliko dobro može pogoniti odgovarajući
+propeller. Upravo je propeller glavni izvor thursta, a njegova geometrija ima presudan utjecaj na ukupne performanse letjelice. Veći promjer doprinosi većoj učinkovitosti i manjem disk loadingu, dok pitch određuje odnos između statičkog 
+thursta i brzine u cruise režimu. Neusklađena kombinacija motora i propellera može rezultirati slabim performansama pri takeoffu, povećanim dragom ili smanjenom pouzdanošću pogonskog sustava.
+Takeoff se odvija pri brzini definiranoj u odnosu na stall speed krila. Kako bi se osigurao siguran takeoff, letjelica se mora odvojiti od tla pri brzini većoj od stall speeda, dok mogućnost rotacije uvelike ovisi o položaju težišta i dovoljnom
+autoritetu elevatora. Landing gear mora omogućiti stabilan i kontroliran ground roll te pouzdano održavanje smjera, a njegova geometrija treba spriječiti pojavu nose-overa i neželjeno poskakivanje tijekom ubrzanja.
+Landing se izvodi pri brzini većoj od stall speeda kako bi se zadržala dobra upravljivost sve do flarea. Aerodinamički elementi poput flapsa povećavaju uzgon, ali istovremeno i drag, što omogućuje strmiji, sporiji i preciznije kontroliran 
+approach. Raspodjela uzgona duž raspona krila pritom igra važnu ulogu u ponašanju letjelice pri malim brzinama, zbog čega se često primjenjuje washout kako bi se smanjio rizik od iznenadnog gubitka uzgona na vrhovima krila.
+Kod manjih UAV-ova sustavi kočenja rijetko uključuju mehaničke brakeove na kotačima. Usporavanje se u pravilu postiže korištenjem aerodinamičkog draga, flapsa ili spoilersa, kao i propeller draga pri smanjenom gasu. Upravljanje smjerom
+tijekom landing rolla oslanja se prvenstveno na rudder, a u određenim konfiguracijama i na zakretni prednji kotač.
+Cjelokupni dizajn mora uzeti u obzir moguće failure modeove, poput gubitka pogona ili smanjene upravljivosti pri malim brzinama. Konzervativan pristup dimenzioniranju, jasno definirane sigurnosne margine i postupno testiranje ključni su za 
+stabilan, pouzdan i siguran rad UAV-a, uz obavezno poštivanje važećih sigurnosnih i operativnih pravila.
