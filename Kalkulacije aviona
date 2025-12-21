@@ -1,1 +1,103 @@
+Ukupna masa aviona = 5kg(modul 900g, bez modula 4.1kg)
+wingspan(b) = 2.332m (iz prethodnih računanja)
+taper ratio(λ) = 0.4 (iz prethodih računa)
+chord = 0.231m (iz prethodnih računa)
+cruise speed = 60km/h = 16.67m/s
+gustoća zraka ρ = 1.225kg/m³
 
+
+S = c * b
+S = 0.539m²
+
+AR = b² / S = 10
+S - wing area(m²)
+c - chord(m)
+b - wingspan(m)
+
+Aspect ratio AR = 10 - dovoljno visok da se smanji induced drag:
+Cdi = Cl² / (π * AR * e) - što je AR veći, to je induced drag manji, pri niskim brzinama induced drag čini 75-80% ukupnog otpora
+AR = 10 daje da je e = 0.9 - vrlo blizu idealne eliptične distribucije lifta(1)
+L/D je veći - letjelica leti duže s istom baterijom
+
+Wing Loading(težina po površini krila)
+W/S = W / S = (m*g) / S
+g = 9.81m/s²
+
+W - weight(N)
+m - mass(kg)
+g - gravitational acceleration
+W/S - wing loading
+
+bez modula(m = 4.1kg)
+W = 4.1 * 9.81 = 40.221N
+W/S = 74.6N/m²  7.61kg/m²
+
+s modulom(m = 5kg)
+W = 5 * 9.81  49.05N
+W/S = 91.0N/m² = 9.27kg/m²
+
+V_stall = √(2 · (W/S) / (ρ · C_Lmax))
+
+V_stall - stall speed(m/s)
+ρ - gustoća zraka(kg/m³)
+Clmax - Max coefficient of lift(/)
+
+bez flapsa(Clmax = 1.5):
+V_stall = √(2 × 91.0 / (1.225 × 1.5)) = 35.8km/h
+
+s flapsima(slotted flaps, Clmax = 2.5):
+V_stall = √(182 / (1.225 × 2.5)) = 27.8 km/h
+
+stall speed:
+bez flapsa: 35.8km/h
+s flapsima: 27.8km/h
+
+Lift na brzini cruise-a
+L = 1/2 * ρ * V² * S * Cl
+
+L - lift(N)
+Cl - coefficient of lift(/)
+
+Cl  = 2W / (ρ * V² * S)
+Cl = 2 * 49.05 / 183.5 = 98.1 / 183.5 = 0.535
+1/2 * ρ * V² * S ≈ 183.5
+Cl na cruise(α = 4°)
+
+Drag na cruiseu
+D = 1/2 * ρ * V² * S * C_D
+Cd = Cd0 + Cdi = Cd0 + (Cl² / (π * AR * e))
+Cd0 = 0.03(profile drag + parasite drag assuming skin is 3D printed and smooth)
+Cdi = (0.535)² / (3.1416 * 10.1 * 0.9) = 0.286 / 28.45 = 0.010
+Cd = 0.04
+D = 183.5 * 0.40 = 7.34N
+
+Drag na cruiseu: 7.34N
+
+Nakon toga možemo pogledati tablicu 1.1 koja pokazuje kako se mijenjaju koeficijent lifta(Cl), koeficijent draga(Cd) i L/D omjer u ovisnosti od kuta napada(α) od -5° do 15° i to za dvije konfiguracije: bez flapsa i sa flapsima(slotted)
+Ključne promjene u tablici:
+C_L raste linearno s α do ≈ 10–12° (bez flapsa do 1.4–1.6, sa flapsima do 2.2–2.5).
+C_D raste kvadratno s C_L (zbog induced draga, C_Di ~ C_L²) i naglo nakon stalla.
+L/D dostiže maksimum na α ≈ 8–10° (23.3 bez flapsa, ≈ 21–22 sa flapsima), a zatim pada zbog rasta draga.
+Stall počinje na ≈ 15° bez flapsa (C_L pada), dok sa flapsima stall je odgođen i progresivniji.
+
+Cruise let (60 km/h) odvija se na α ≈ 4–5° s C_L ≈ 0.535–0.8 i L/D ≈ 20–23 bez flapsa – optimalno za efikasnost i endurance.
+Flapsi nisu potrebni za normalan cruise – oni samo povećavaju drag i smanjuju L/D.
+Flapsi omogućuju veći C_L (do 2.5) i sigurniji let blizu stalla (α do 15°), što je korisno za prelazak na spor let.
+Bez flapsa postoji dovoljna margina do stalla (α do 15°), što čini let sigurnim i efikasnim na ovoj brzini.
+
+Postavljamo vertikalnu brzinu
+V_climb = 5m/s
+Za vertikalno dizanje, thrust mora biti veći od težine(T > W)
+η_total = 0.90 (motor 90%)
+
+Thrust potreban za 5m/s vertikalno
+
+P = W * V_climb
+P = 242.25W 
+P = 270W
+
+Snaga za cruise: 36W
+E = P_cruise * time = 139.8Wh
+Ako ostane 20% LiPo baterije onda: 174.75Wh
+
+LiPo capacity ≈ 20000 mAh
