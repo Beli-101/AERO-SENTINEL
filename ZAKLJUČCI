@@ -1,1 +1,29 @@
+Zaključci iz istraživanja:
+
+TRASNPORT UAV 
+Monoplane 
+
+Angles and why: 
+Dihedral:
+Sweep:
+Position of wings: 
+
+
+Kontrolne površine: 
+1. Elevators: lateral axis (pitch) 
+2. Rudder: vertical axis (yaw)
+3. Ailerons: longitudinal axis (roll)
+4. Flaps: on the wing ( trailing edge) , increas of drag or lift depending on what we want for landing / slowing
+5. Izvlačenje landing geara - također radi increase  u dragu
+
+
+Pogon: 
+- motor i propeller usko povezani
+- odabir motora ne temelji se samo na njegovoj nazivnoj snazi, već prvenstveno na tome koliko dobro može pogoniti odgovarajući propeller
+- propeller glavni izvor thrusta
+
+
+BRAKES
+- kod manjih UAV-ova sustavi kočenja rijetko uključuju mehaničke brakeove na kotačima. 
+- usporavanje se u pravilu postiže korištenjem aerodinamičkog draga, flapsa, ...
 
