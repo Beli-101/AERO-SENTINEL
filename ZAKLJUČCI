@@ -47,3 +47,9 @@ Motor mount i landing gear izrađeni su od aluminija zbog njegove otpornosti na 
 loma plastično deformira, što povećava sigurnost. Carbon fiber u tim aplikacijama nije idealan zbog osjetljivosti na udarce, 
 dok PLA nema dovoljnu mehaničku izdržljivost. Ovakva podjela materijala omogućuje da svaki dio letjelice koristi materijal 
 koji najbolje odgovara njegovoj funkciji, uz minimalnu masu i dovoljnu strukturnu sigurnost.
+
+
+PLACEMENT
+Što se tiče pozicioniranja servo motora, zaključili smo da je svejedno gdje ih postavimo jer imaju vrlo malu masu  koja neće 
+utjecati na center of gravity. Placement motora je ispod krila. Što se tiče pozicije uz krilo, postavit ćemo ga tako da propeler 
+ne udara u fuselage + još malo prostora. 
