@@ -4,7 +4,9 @@ TRASNPORT UAV
 Monoplane 
 
 Angles and why: 
-Dihedral:
+Dihedral: 5°-8°
+Kada se letjelica nagne, onda dihedral uzrokuje da donje krilo dobije veći efektivni kut napada(α), a gornje manji, odnosno ako se avion nagne bocno lijevo, lijevo krilo će se spustit i imat će veći efektivni kut što uzrokuje veći lift, a na desnom krilu će se još smanjit efektivni kut napada, što uzrokuje još manji lift na desnom krilu, a to sve pravi još veću razliku u liftu. Isto tako pomaže u sporom letu zato jer se ne odrađuju stalno korekcije aileronima što štedi energiju baterije. Isto tako, pomaže u vezi payloada, payload je oko 1kg mase što nam je jedna petina mase, a on će se mijenjat kada budemo ispuštali module, centar gravitacije postaje varijabilam, a dihedral angle kompenzira to i letjelica ostaje stabilna.
+
 Sweep:
 Position of wings: 
 
