@@ -52,4 +52,6 @@ koji najbolje odgovara njegovoj funkciji, uz minimalnu masu i dovoljnu strukturn
 PLACEMENT
 Što se tiče pozicioniranja servo motora, zaključili smo da je svejedno gdje ih postavimo jer imaju vrlo malu masu  koja neće 
 utjecati na center of gravity. Placement motora je ispod krila. Što se tiče pozicije uz krilo, postavit ćemo ga tako da propeler 
-ne udara u fuselage + još malo prostora. 
+ne udara u fuselage + još malo prostora. Za sajle ćemo u unutarnjoj strukturi ostaviti rupe kroz slojeve konstrukcije kroz koje 
+će one prolaziti do kontrolne površine. 
+
