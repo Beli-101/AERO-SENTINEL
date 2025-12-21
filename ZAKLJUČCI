@@ -27,3 +27,14 @@ BRAKES
 - kod manjih UAV-ova sustavi kočenja rijetko uključuju mehaničke brakeove na kotačima. 
 - usporavanje se u pravilu postiže korištenjem aerodinamičkog draga, flapsa, ...
 
+MATERIJALI 
+Odabrana struktura UAV-a temelji se na kombinaciji 3D printanog skina i unutarnjih ojačanja od carbon fiber cijevi,
+kako bi se postigao dobar omjer mase, čvrstoće i jednostavnosti izrade. Skin trupa i krila izrađen je od PLA/PETG materijala
+jer mu je primarna uloga aerodinamička, a ne nosiva, dok se glavni strukturni loadovi prenose kroz spars i unutarnja ojačanja.
+Carbon fiber se koristi za main spar i ključna strukturna ojačanja jer ima znatno veći modulus i tensile strength uz manju 
+gustoću u odnosu na aluminum i plastiku, što ga čini idealnim za nošenje savojnih opterećenja krila. Wing ribs su izrađeni od 
+PLA-a jer na njima djeluju relativno mali loadovi, a lakoća izrade i oblikovanja ima veću važnost od ekstremne čvrstoće. 
+Motor mount i landing gear izrađeni su od aluminija zbog njegove otpornosti na vibracije, udarce i sposobnosti da se prije 
+loma plastično deformira, što povećava sigurnost. Carbon fiber u tim aplikacijama nije idealan zbog osjetljivosti na udarce, 
+dok PLA nema dovoljnu mehaničku izdržljivost. Ovakva podjela materijala omogućuje da svaki dio letjelice koristi materijal 
+koji najbolje odgovara njegovoj funkciji, uz minimalnu masu i dovoljnu strukturnu sigurnost.
