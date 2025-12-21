@@ -341,7 +341,7 @@ Slika mehanizma:
 
 
 
-# LANDING GEAR - in progress ( brakes, steering nekak rješit) 
+# LANDING GEAR - in progress
 
 <img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/217597f8-3058-44fc-a95f-e93b98d70801" />
 
@@ -356,7 +356,18 @@ F - fixed, dio aviona.
 Kada sajla povuče main point (3) towards inside, s obzirom da je  puzzle piece 1 i 2 spojen na main point,  koji ide prema unutra, svi idu prema unutra i slažu se kao puzzla. 
 
 
- Naravno, još uzimamo u obzir da će dolje biti i suspenzije, no to ćemo dodati u dizajnu. 
+ Naravno, još uzimamo u obzir da će dolje biti i suspenzije, no to ćemo dodati u dizajnu. Brakeove nećemo koristi na kotačima, objašnjeno u ZAKLJUČCIMA.
+
+ Steering će biti izveden tako da ovaj nosač na kojem su kotači, bude na zupčaniku na vrhu, Tako da kada želimo skrenuti okrećemo cijeli nosač lijevo ili desno, a ne gume.
+ Broj serva: 1 (samo na prednjem landing gearu)
+ 
+
+ Trebamo tri takva, jedan sprijeda i jedan iza. Broj serva: 2 
+
+ ## Ukupno serva za cijeli UAV: 7 
+ 4 kont. površine
+ 2 izvlačanje landing geara
+ 1 skretanje
 
  
 
