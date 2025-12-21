@@ -369,18 +369,6 @@ Kada sajla povuče main point (3) towards inside, s obzirom da je  puzzle piece 
  2 izvlačanje landing geara
  1 skretanje
 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ WING POSICIJA
+![WhatsApp Image 2025-12-21 at 19 40 39](https://github.com/user-attachments/assets/de847939-f456-4d7a-a8cd-3e2ff652201b)
+Ovu poziciju krila dobili smo tako što smo dobili centar gravitacije. Gledajući težinu drugih komponenti postavili smo krila kako bi težine u avionu bile u balansu.
