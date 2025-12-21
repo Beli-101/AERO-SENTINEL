@@ -55,3 +55,118 @@ Kod manjih UAV-ova sustavi kočenja rijetko uključuju mehaničke brakeove na ko
 tijekom landing rolla oslanja se prvenstveno na rudder, a u određenim konfiguracijama i na zakretni prednji kotač.
 Cjelokupni dizajn mora uzeti u obzir moguće failure modeove, poput gubitka pogona ili smanjene upravljivosti pri malim brzinama. Konzervativan pristup dimenzioniranju, jasno definirane sigurnosne margine i postupno testiranje ključni su za 
 stabilan, pouzdan i siguran rad UAV-a, uz obavezno poštivanje važećih sigurnosnih i operativnih pravila.
+
+
+
+Za naš UAV ključno je razumjeti kako letjelica ostaje u zraku, kako se kreće i kako se nosi s vanjskim utjecajima poput vjetra.
+Prvo počinjemo definicijama sila: lift (uzgon), drag (otpor) i pitching moment (moment nagiba). Ovi termini su osnova za dizajn našeg UAV-a jer moramo osigurati da letjelica može letjeti 3 sata, nositi module i biti stabilna pri vjetru do 10 m/s.
+
+Počnimo s liftom: to je sila koja drži letjelicu u zraku, okomita na smjer kretanja. Lift se izračunava kao
+
+Cl · 1/2 · ρ · V² · S,
+
+gdje je Cl koeficijent lifta (ovisan o obliku profila i kutu napada), ρ gustoća zraka, V brzina, a S površina krila.
+
+Lift opisujemo kroz kruženje odnosno cirkulaciju. Kruženje je uvedeno kao jednostavan tok, a princip superpozicije omogućuje kombinaciju pravolinijskog toka i kruženja oko tijela, što rezultira liftom. Na primjer, ako postoji kruženje Γ oko tijela i pravolinijska brzina V, lift po jedinici duljine je
+
+L′ = ρ · V · Γ (Kutta–Joukowskyjev zakon).
+
+Zrak brže teče preko gornje površine, stvarajući niži tlak (Bernoullijev zakon). Tlakovi koji uzrokuju lift i drag nemaju veze s kompresijom ili rarefakcijom zraka, jer zrak nije kompresibilan pri brzinama ispod 350–400 mph.
+
+Za tanke profile (airfoils), kruženje je:
+
+Γ = 1/2 · a₀ · V · c · α,
+
+gdje je a₀ nagib krivulje lifta, c chord, a α apsolutni kut napada. To daje koeficijent lifta
+
+Cl = a₀ · α,
+
+pri čemu je a₀ = 2 · π · η, gdje je η faktor efikasnosti profila (obično oko 0,9). Ovo je korisno za naš dizajn jer nam omogućuje predviđanje lifta na osnovi kuta napada.
+
+Drag (otpor) je sila koja usporava letjelicu, u suprotnom smjeru od kretanja. Formula je
+
+Cd · 1/2 · ρ · V² · S.
+
+Razlikujemo inducirani drag i profilni drag. Inducirani drag nastaje zbog vrtloga(vortexa) na krajevima krila – za naš dizajn minimiziramo ga visokim aspect ratio-om kako bismo postigli dulji let. Inducirani drag je
+
+Di / L = ω / V
+
+gdje je ω brzina downwasha. Za eliptičnu distribuciju lifta inducirani drag je minimalan, što je idealno za endurance.
+Profilni drag dolazi od trenja i pritiska. U idealnom fluidu nema draga (prema d’Alembertovu paradoksu), ali u stvarnom fluidu postoji granični sloj, gdje viskoznost uzrokuje trenje. Za naše tijelo drag je uglavnom trenje, pa moramo paziti da površina aviona bude glatka kako bismo smanjili profilni drag.
+Pitching moment je moment koji okreće nos letjelice gore ili dolje, a izražava se kao
+
+Cm · 1/2 · ρ · V² · S · c
+
+Stabilnost ovisi o ovome: ako moment nije uravnotežen, letjelica se rotira. Našli smo da Cm mora imati negativan nagib u odnosu na Cl za stabilnost. Ove pretpostavke proizlaze iz Bernoullijeve teorije.
+Vidimo kako aspect ratio utječe na nagib krivulje lifta, a na drugoj tablici ističe se da krivulja Cd₀ vs. Cl treba biti ravna za mali drag u širokom rasponu Cl. Ovo je ključno za transportni modul, jer modul mijenja težinu, a avion mora održati stabilnost.
+U dvodimenzionalnom toku lift je povezan s kruženjem, ali za konačno krilo vrtlozi (vortexi) na vrhovima stvaraju downwash, smanjujući efektivni kut napada i stvarajući inducirani drag. Za eliptičnu distribuciju lifta downwash je konstantan, a inducirani drag minimalan:
+
+Cdi = Cl² / (π · R)
+
+Također, inducirani drag ovisi o aspect ratio-u, dok je profilni drag konstantan, pa je ukupni drag
+
+Cd = Cd₀ + Cl² / (π · R)
+
+Viskoznost: u stvarnom zraku postoji granični sloj gdje brzina pada na nulu, uzrokujući trenje. Reynoldsov broj određuje jeli tok laminarni, tranzicijski ili turbulentni, što utječe na drag i efikasnost.
+Laminarni tok(laminar flow):
+Zrak teče u paralelnim slojevima, nema miješanja između slojeva, trenje je vrlo malo jer nema vortexa, skin friction drag je nizak, laminarni sloj je tanak i osjetljiv, čak i mala smjetnja npr. nepravilnost na površini ili nešto slično može ga promjeniti
+Tranzicijski tok(transitional flow):
+Prijelazno stanje između laminarnog i turbulentnog, laminarni tok počinje postajati nestabilan, pojavljuju se razlike i vortexi, ali još uvijek nije nešto previše
+Turbulentni tok(turbulent flow):
+Zrak teče nepredvidljivo i kaotično, s velikim brojem vrtloga i miješanjem, trenje je mnogo veće nego u laminarnom toku jer se energija gubi u tim vortexima, skin friction drag je veći(obično 2-5 puta veći nego u laminarmom toku), turbulentni sloj je deblji i otporniji na odvajanje pa teže dolazi do stalla na krilu(stall brzina je viša)
+Reynoldsov broj i tok:
+
+Re < 10^6: tok ostaje laminaran
+Re > 10^7: tok postaje turbulentan
+
+Jako je bitno paziti na to jer direktno utječe na efikasnost našeg leta
+Stall: kada kut napada prelazi kritičnu vrijednost, tok se odvaja (burble point), a lift pada. Za naš spor let moramo izbjegavati stall koristeći flapsove za povećanje Clmax. Flapsovi mijenjaju camber, povećavaju lift, ali i drag, što je korisno pri slijetanju.
+U ravnom letu vrijedi: lift = težina, drag = thrust.
+Trajanje leta (endurance): minimalno 3 sata bez prekida.
+Endurance se računa iz energije: manji otpor znači manji trošak energije, a time dulji let. Formula za maksimalni endurance (uz konstantnu efikasnost pogona) kaže da se leti na minimum power kad je inducirani drag tri puta veći od parazitskog draga (Cdi = 3 Cdp).
+Cdi ćemo manipulirati sa aspect ratiom, u našem slučaju ako je high aspect ratio, smanjuje se CDi jer je CDi = C_L² / (π × AR × e), a parasite drag ćemo estimirati preko simulacije
+Wing loading ima velik utjecaj – niži wing loading omogućuje sporiji let s manjim dragom, što je idealno za endurance. Koristimo Breguetovu formulu:
+
+R = η / c · L/D · ln(W₀ / W₁)
+
+R je domet, c je potrošnja, a η efikasnost motora. Bitno je naglasiti da je za konstantu c/η maksimalni endurance je na minimumu potrebne snage, a maksimalni domet na maksimumu L/D, isto tako gledamo i logaritam W0/W1, gdje uspoređujemo težinu na početku i na kraju, odnosno što nam je baterija veči postotak težine aviona to će nam duže letjeti jer će se baterija trošiti
+onda ćemo računati vrijeme kao domet/brzina, odnosno:
+
+t = R/V
+
+Za naš UAV isto moramo osigurati da je power available veći od power required tijekom 3 sata. Parabolični polar koristimo za procjene:
+
+Cd = CDp + Cl² / (π · R).
+
+Maksimalni L/D događa se kada je parazitski drag jednak induciranom dragu (CDp = Cdi), a minimum snage kada je Cdi = 3 CDp. Za endurance biramo:
+
+Vmin power = (3/4)^(1/4) · Vmax_L/D.
+
+Vmin power je brzina na kojoj je potrebna snaga za let najmanja, odnosno maksimalno trajanje leta, a Vmax_L/D je brzina na kojoj je L/D najveći, omjer (3/4)^(1/4) smo izvukli od toga da je minimum snage kada je Cdi = 3 Cdp, to znači da je ukupno 4 dijela tako da je u nazivniku 4
+Otpornost na vjetar zahtijeva stabilan let pri udarima do 10 m/s. Vjetar od 10 m/s (36 km/h) može uzrokovati turbulenciju ili gubitak kontrole. Kod lateralne stabilnosti dihedral (kut krila prema gore) će nam pomoći: ako vjetar nagne letjelicu, lift na nižem krilu raste i vraća letjelicu u ravnotežu. Također koristimo veliki vertikalni stabilizator za smanjenje utjecaja vjetra.
+Za directional stability koristimo stabilnosne derivate, to znači da mora biti dovoljno velik vertikalni rep za yawing moment zbog yaw-a. Niski wing loading čini UAV osjetljivim na vjetar, pa dizajn mora osigurati dovoljnu stabilnost
+
+Rolling moment zbog yaw-a dolazi od dihedrala i sweepa krila. Ako UAV uđe u sideslip, dihedral stvara rolling moment koji ispravlja let. Preporučeni dihedral je 5–8 stupnjeva. Za directional stability granice su
+
+0,0007 < −dCv/dψ < 0,0015
+
+ako je pozitivan to znači da nastaje moment koji vraća nos u smjer strujanja, što je vrijednost veća to je jači directional stability
+Cv - koeficijent yawing momenta oko vertikalne osi
+ψ - kut zakretanja letjelice u odnosu na smjer strujanja
+ovisno o površini i duljini repa.
+
+Dinamična stabilnost u vjetru uključuje damping odnosno sposobnost letjelice da smiri oscilacije nakon poremećaja, koji su vecinom naleti vjetrova. Turbulencija može uzrokovati roll, ali damping ga smiruje.
+Brzina leta: sposobnost sporog leta bez gubitka uzgona.
+Loitering znači sporo kruženje radi preciznog izbacivanja sjemena ili senzora. Stall nastaje kada kut napada prijeđe kritičnu vrijednost, a lift padne (bubble point gdje se tok odvaja). Flapsovi povećavaju lift pri malim brzinama (Clmax raste s flapsovima, smanjujući stall speed).
+Wing loading računamo jer je stall speed proporcionalan korijenu wing loadinga. Iz
+
+L = W = Cl · 1/2 · ρ · V² · S
+
+dobivamo
+
+Vstall = √(2W / (ρ · S · Clmax))
+
+Niski wing loading znači niži stall speed. Bitno je naglasiti da brzina cruiseanja mora biti veća od stall speeda.
+
+Koristimo flapsove za povećanje Clmax-a
+Stall nastaje kada se tok odvaja, stvarajući pressure drag. Za loitering možemo koristit flapsove kako bismo povećali lift bez povećanja brzine.
