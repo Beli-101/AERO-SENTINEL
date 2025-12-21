@@ -4,10 +4,17 @@ TRASNPORT UAV
 Monoplane 
 
 Angles and why: 
-Dihedral: 5°-8°
+Dihedral: 8°
 Kada se letjelica nagne, onda dihedral uzrokuje da donje krilo dobije veći efektivni kut napada(α), a gornje manji, odnosno ako se avion nagne bocno lijevo, lijevo krilo će se spustit i imat će veći efektivni kut što uzrokuje veći lift, a na desnom krilu će se još smanjit efektivni kut napada, što uzrokuje još manji lift na desnom krilu, a to sve pravi još veću razliku u liftu. Isto tako pomaže u sporom letu zato jer se ne odrađuju stalno korekcije aileronima što štedi energiju baterije. Isto tako, pomaže u vezi payloada, payload je oko 1kg mase što nam je jedna petina mase, a on će se mijenjat kada budemo ispuštali module, centar gravitacije postaje varijabilam, a dihedral angle kompenzira to i letjelica ostaje stabilna.
 
-Sweep:
+Sweep: 10°
+sweep odgađa stall na vrhovima krila, čini ga progresivnim(počinje na rootu, a ne na tipu) - manja kontrola pri malim brzinama
+sweep back povećava dihedral effect - bolja pasivna stabilnost u vjetru, smanjuje savijanje krila
+Može malo povećati induced drag, ali kod niskih brzina to nije kritično
+
+Negativna stvar kod sweep back-a je to što se endurance smanjuje jer se L/D ratio smanjuje jer se induced drag povećava jer je efektivni kut na vrhovima manji, pa lift nije ravnomjerno raspoređen(veći dio lifta je bliže rootu, a manji na vrhovima)
+Mi biramo nešto između odnosno 10° da bi dobili na stabilizaciji(sweep i dihedral rade zajedno) i da nebi izgubili previše efikasnosti
+
 Position of wings: 
 
 
